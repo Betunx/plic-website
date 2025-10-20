@@ -1,0 +1,186 @@
+<section class="contact section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-label">Contacto</div>
+      <h2 class="section-title">Hablemos de tu <span class="text-gradient">proyecto</span></h2>
+      <p class="section-intro">
+        Estamos listos para ayudarte a transformar tu presencia digital.
+        Cuéntanos sobre tu proyecto y te responderemos pronto.
+      </p>
+    </div>
+
+    <div class="contact-wrapper">
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <!-- Name -->
+          <div class="form-group">
+            <label class="form-label" for="name">Nombre completo *</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="form-control"
+              [class.error]="isFieldInvalid('name')"
+              placeholder="Juan Pérez" />
+            <div class="form-error" *ngIf="isFieldInvalid('name')">
+              {{ getFieldError('name') }}
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="form-control"
+              [class.error]="isFieldInvalid('email')"
+              placeholder="juan@ejemplo.com" />
+            <div class="form-error" *ngIf="isFieldInvalid('email')">
+              {{ getFieldError('email') }}
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label class="form-label" for="phone">Teléfono *</label>
+            <input
+              type="tel"
+              id="phone"
+              formControlName="phone"
+              class="form-control"
+              [class.error]="isFieldInvalid('phone')"
+              placeholder="5512345678" />
+            <div class="form-error" *ngIf="isFieldInvalid('phone')">
+              {{ getFieldError('phone') }}
+            </div>
+          </div>
+
+          <!-- Company -->
+          <div class="form-group">
+            <label class="form-label" for="company">Empresa</label>
+            <input
+              type="text"
+              id="company"
+              formControlName="company"
+              class="form-control"
+              placeholder="Nombre de tu empresa" />
+          </div>
+
+          <!-- Service -->
+          <div class="form-group">
+            <label class="form-label" for="service">Servicio de interés *</label>
+            <select
+              id="service"
+              formControlName="service"
+              class="form-control"
+              [class.error]="isFieldInvalid('service')">
+              <option value="" disabled>Selecciona un servicio</option>
+              <option *ngFor="let service of serviceOptions" [value]="service">
+                {{ service }}
+              </option>
+            </select>
+            <div class="form-error" *ngIf="isFieldInvalid('service')">
+              {{ getFieldError('service') }}
+            </div>
+          </div>
+
+          <!-- Budget -->
+          <div class="form-group">
+            <label class="form-label" for="budget">Presupuesto estimado *</label>
+            <select
+              id="budget"
+              formControlName="budget"
+              class="form-control"
+              [class.error]="isFieldInvalid('budget')">
+              <option value="" disabled>Selecciona un rango</option>
+              <option *ngFor="let budget of budgetOptions" [value]="budget">
+                {{ budget }}
+              </option>
+            </select>
+            <div class="form-error" *ngIf="isFieldInvalid('budget')">
+              {{ getFieldError('budget') }}
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group form-group-full">
+            <label class="form-label" for="message">Mensaje *</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              class="form-control"
+              [class.error]="isFieldInvalid('message')"
+              rows="5"
+              placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+            <div class="form-error" *ngIf="isFieldInvalid('message')">
+              {{ getFieldError('message') }}
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group form-group-full">
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg btn-block"
+              [disabled]="isSubmitting">
+              <span *ngIf="!isSubmitting">Enviar Mensaje</span>
+              <span *ngIf="isSubmitting">Enviando...</span>
+            </button>
+          </div>
+
+          <!-- Success Message -->
+          <div class="alert alert-success" *ngIf="submitSuccess">
+            ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.
+          </div>
+
+          <!-- Error Message -->
+          <div class="alert alert-error" *ngIf="submitError">
+            Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Info Card -->
+      <div class="contact-info-card">
+        <h3 class="info-title">Información de Contacto</h3>
+        <p class="info-description">
+          También puedes contactarnos directamente a través de estos medios.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item" *ngFor="let info of contactInfo">
+            <div class="info-icon">{{ info.icon }}</div>
+            <div class="info-content">
+              <div class="info-label">{{ info.label }}</div>
+              <a *ngIf="info.link" [href]="info.link" class="info-value">
+                {{ info.value }}
+              </a>
+              <div *ngIf="!info.link" class="info-value">
+                {{ info.value }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <h4 class="social-title">Síguenos</h4>
+          <div class="social-links">
+            <a
+              *ngFor="let social of socialLinks"
+              [href]="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              [attr.aria-label]="social.name">
+              <span class="social-icon">{{ social.icon }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

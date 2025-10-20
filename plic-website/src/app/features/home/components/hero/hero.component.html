@@ -1,0 +1,53 @@
+<section class="hero">
+  <div class="hero-background">
+    <div class="hero-decoration decoration-1"></div>
+    <div class="hero-decoration decoration-2"></div>
+    <div class="hero-decoration decoration-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <!-- Badge -->
+      <div class="hero-badge animate-fadeInDown">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Agencia Digital Creativa</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="hero-title animate-fadeInUp">
+        Transformamos tu
+        <span class="text-gradient">presencia digital</span>
+      </h1>
+
+      <!-- Description -->
+      <p class="hero-description animate-fadeInUp">
+        Creamos experiencias digitales únicas que conectan marcas con sus
+        audiencias. Diseño, estrategia y creatividad al servicio de tu negocio.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-cta animate-fadeInUp">
+        <button class="btn btn-primary btn-lg" (click)="scrollToContact()">
+          Comenzar Proyecto
+        </button>
+        <button class="btn btn-secondary btn-lg" (click)="scrollToPortfolio()">
+          Ver Portfolio
+        </button>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats animate-fadeInUp">
+        <div class="stat-item" *ngFor="let stat of stats">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator animate-bounce" (click)="scrollToAbout()">
+        <div class="scroll-arrow"></div>
+        <span class="scroll-text">Scroll</span>
+      </div>
+    </div>
+  </div>
+</section>

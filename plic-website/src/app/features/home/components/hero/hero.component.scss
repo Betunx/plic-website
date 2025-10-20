@@ -1,0 +1,225 @@
+@use '../../../../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 $spacing-3xl;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #fce7f3 100%);
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 140px 0 $spacing-3xl;
+  }
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-decoration {
+  position: absolute;
+  border-radius: $radius-full;
+  opacity: 0.3;
+  filter: blur(60px);
+
+  &.decoration-1 {
+    width: 400px;
+    height: 400px;
+    background: $primary;
+    top: 10%;
+    right: 10%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  &.decoration-2 {
+    width: 300px;
+    height: 300px;
+    background: $secondary;
+    bottom: 20%;
+    left: 5%;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  &.decoration-3 {
+    width: 250px;
+    height: 250px;
+    background: $primary-light;
+    top: 50%;
+    left: 50%;
+    animation: float 7s ease-in-out infinite;
+    animation-delay: -4s;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-md;
+  background: rgba($white, 0.9);
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: $radius-full;
+  margin-bottom: $spacing-lg;
+  box-shadow: $shadow-sm;
+  animation-delay: 0.1s;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: $primary;
+  border-radius: $radius-full;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge-text {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $dark;
+}
+
+.hero-title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  color: $dark;
+  margin-bottom: $spacing-lg;
+  animation-delay: 0.2s;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-5xl;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-6xl;
+  }
+}
+
+.hero-description {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  color: $gray;
+  max-width: 700px;
+  margin-bottom: $spacing-xl;
+  animation-delay: 0.3s;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-xl;
+  }
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-2xl;
+  animation-delay: 0.4s;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    gap: $spacing-lg;
+  }
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: $spacing-2xl;
+  padding: $spacing-xl;
+  background: rgba($white, 0.9);
+  border-radius: $radius-2xl;
+  box-shadow: $shadow-lg;
+  animation-delay: 0.5s;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-2xl;
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $light;
+    padding-bottom: $spacing-lg;
+
+    @media (min-width: $breakpoint-md) {
+      border-bottom: none;
+      border-right: 1px solid $light;
+      padding-bottom: 0;
+      padding-right: $spacing-lg;
+    }
+  }
+}
+
+.stat-value {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-extrabold;
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: $font-size-sm;
+  color: $gray;
+  font-weight: $font-weight-medium;
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity $transition-base;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.scroll-arrow {
+  width: 24px;
+  height: 24px;
+  border-left: 2px solid $primary;
+  border-bottom: 2px solid $primary;
+  transform: rotate(-45deg);
+}
+
+.scroll-text {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

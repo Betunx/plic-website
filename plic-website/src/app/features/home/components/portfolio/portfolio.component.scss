@@ -1,0 +1,232 @@
+@use '../../../../../styles/variables' as *;
+
+.portfolio {
+  background: $white;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto $spacing-3xl;
+}
+
+.section-label {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($secondary, 0.1) 100%);
+  color: $primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: $radius-full;
+  margin-bottom: $spacing-md;
+}
+
+.section-title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  color: $dark;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.section-intro {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  color: $gray;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-xl;
+  }
+}
+
+// Filters
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-2xl;
+}
+
+.filter-btn {
+  padding: $spacing-sm $spacing-lg;
+  background: $white;
+  color: $gray;
+  border: 2px solid $light;
+  border-radius: $radius-full;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    background: $gradient-primary;
+    color: $white;
+    border-color: transparent;
+    box-shadow: $shadow-md;
+  }
+}
+
+// Portfolio Grid
+.portfolio-grid {
+  margin-bottom: $spacing-2xl;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-base;
+  cursor: pointer;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-2xl;
+
+    .project-overlay {
+      opacity: 1;
+    }
+
+    .project-image {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: $light;
+
+  @media (min-width: $breakpoint-md) {
+    height: 300px;
+  }
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $transition-slow;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba($primary, 0.9) 0%, rgba($secondary, 0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
+  opacity: 0;
+  transition: opacity $transition-base;
+}
+
+.project-category {
+  padding: $spacing-xs $spacing-md;
+  background: rgba($white, 0.2);
+  color: $white;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: $radius-full;
+  backdrop-filter: blur(10px);
+}
+
+.view-project-btn {
+  padding: $spacing-sm $spacing-lg;
+  background: $white;
+  color: $primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  border: none;
+  border-radius: $radius-full;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.project-content {
+  padding: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  flex: 1;
+}
+
+.project-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $dark;
+}
+
+.project-description {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $gray;
+  flex: 1;
+}
+
+.project-metrics {
+  display: flex;
+  gap: $spacing-lg;
+  padding-top: $spacing-md;
+  border-top: 1px solid $light;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.metric-value {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.metric-label {
+  font-size: $font-size-xs;
+  color: $gray;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Empty State
+.empty-state {
+  text-align: center;
+  padding: $spacing-3xl;
+  color: $gray;
+  font-size: $font-size-lg;
+}

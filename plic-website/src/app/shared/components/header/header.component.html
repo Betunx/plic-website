@@ -1,0 +1,60 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <div class="logo" (click)="scrollToSection('hero')">
+        <span class="logo-text">Plic</span>
+        <span class="logo-studio">Studio</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop">
+        <ul class="nav-list">
+          <li *ngFor="let item of navItems" class="nav-item">
+            <a
+              class="nav-link"
+              [class.active]="activeSection === item.sectionId"
+              (click)="scrollToSection(item.sectionId)">
+              {{ item.label }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <button class="btn btn-primary cta-desktop" (click)="scrollToSection('contact')">
+        Comenzar Proyecto
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="mobile-menu-btn"
+        [class.open]="isMobileMenuOpen"
+        (click)="toggleMobileMenu()"
+        aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" [class.open]="isMobileMenuOpen">
+      <ul class="nav-list-mobile">
+        <li *ngFor="let item of navItems" class="nav-item-mobile">
+          <a
+            class="nav-link-mobile"
+            [class.active]="activeSection === item.sectionId"
+            (click)="scrollToSection(item.sectionId)">
+            {{ item.label }}
+          </a>
+        </li>
+        <li class="nav-item-mobile">
+          <button class="btn btn-primary" (click)="scrollToSection('contact')">
+            Comenzar Proyecto
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

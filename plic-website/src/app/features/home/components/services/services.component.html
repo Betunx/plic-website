@@ -1,0 +1,61 @@
+<section class="services section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-label">Servicios</div>
+      <h2 class="section-title">Soluciones digitales <span class="text-gradient">a tu medida</span></h2>
+      <p class="section-intro">
+        Ofrecemos una gama completa de servicios digitales diseñados para
+        impulsar tu marca y conectar con tu audiencia de manera efectiva.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-gradient" [style.background]="service.gradient"></div>
+        <div class="service-content">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3 class="service-title">{{ service.title }}</h3>
+          <p class="service-description">{{ service.description }}</p>
+          <ul class="service-features">
+            <li *ngFor="let feature of service.features" class="feature-item">
+              <span class="feature-check">✓</span>
+              <span class="feature-text">{{ feature }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <div class="process-section">
+      <div class="process-header">
+        <h3 class="process-title">Nuestro Proceso</h3>
+        <p class="process-description">
+          Un enfoque estructurado y probado para garantizar el éxito de tu proyecto
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step" *ngFor="let step of processSteps; let i = index">
+          <div class="step-number">{{ step.number }}</div>
+          <div class="step-content">
+            <h4 class="step-title">{{ step.title }}</h4>
+            <p class="step-description">{{ step.description }}</p>
+          </div>
+          <div class="step-connector" *ngIf="i < processSteps.length - 1"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="services-cta">
+      <h3 class="cta-title">¿Listo para llevar tu marca al siguiente nivel?</h3>
+      <p class="cta-description">Comencemos a trabajar en tu proyecto hoy mismo</p>
+      <button class="btn btn-primary btn-lg" (click)="scrollToContact()">
+        Solicitar Cotización
+      </button>
+    </div>
+  </div>
+</section>

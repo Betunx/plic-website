@@ -1,0 +1,91 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- Brand Column -->
+      <div class="footer-column footer-brand">
+        <div class="logo" (click)="scrollToTop()">
+          <span class="logo-text">Plic</span>
+          <span class="logo-studio">Studio</span>
+        </div>
+        <p class="brand-description">
+          Transformamos tu presencia digital con creatividad y estrategia.
+          Impulsamos marcas a través del diseño y la innovación.
+        </p>
+        <div class="social-links">
+          <a
+            *ngFor="let social of socialLinks"
+            [href]="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            [attr.aria-label]="social.name">
+            <span class="social-icon">{{ getSocialIcon(social.icon) }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <h4 class="footer-title">Enlaces Rápidos</h4>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks">
+            <a
+              class="footer-link"
+              (click)="scrollToSection(link.sectionId!)">
+              {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Services Column -->
+      <div class="footer-column">
+        <h4 class="footer-title">Servicios</h4>
+        <ul class="footer-links">
+          <li *ngFor="let service of services">
+            <a
+              class="footer-link"
+              (click)="scrollToSection(service.sectionId!)">
+              {{ service.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-column">
+        <h4 class="footer-title">Contacto</h4>
+        <ul class="footer-contact">
+          <li class="contact-item">
+            <span class="contact-icon">📧</span>
+            <a href="mailto:hola@plicstudio.com" class="footer-link">
+              hola&#64;plicstudio.com
+            </a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">📱</span>
+            <a href="tel:+525512345678" class="footer-link">
+              +52 55 1234 5678
+            </a>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span class="contact-text">Ciudad de México, México</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {{ currentYear }} Plic Studio. Todos los derechos reservados.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Política de Privacidad</a>
+        <span class="separator">|</span>
+        <a href="#" class="footer-bottom-link">Términos de Servicio</a>
+      </div>
+    </div>
+  </div>
+</footer>

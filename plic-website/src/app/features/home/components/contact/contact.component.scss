@@ -1,0 +1,243 @@
+@use '../../../../../styles/variables' as *;
+
+.contact {
+  background: linear-gradient(180deg, $white 0%, $light 100%);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto $spacing-3xl;
+}
+
+.section-label {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($secondary, 0.1) 100%);
+  color: $primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: $radius-full;
+  margin-bottom: $spacing-md;
+}
+
+.section-title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  color: $dark;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.section-intro {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  color: $gray;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-xl;
+  }
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+// Contact Form
+.contact-form-wrapper {
+  background: $white;
+  border-radius: $radius-2xl;
+  padding: $spacing-xl;
+  box-shadow: $shadow-lg;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: $spacing-2xl;
+  }
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group-full {
+  @media (min-width: $breakpoint-md) {
+    grid-column: 1 / -1;
+  }
+}
+
+.form-control {
+  &.error {
+    border-color: #ef4444;
+    background-color: rgba(#ef4444, 0.05);
+  }
+}
+
+.btn-block {
+  width: 100%;
+}
+
+// Alerts
+.alert {
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.alert-success {
+  background-color: rgba(#10b981, 0.1);
+  color: #059669;
+  border: 1px solid rgba(#10b981, 0.3);
+}
+
+.alert-error {
+  background-color: rgba(#ef4444, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(#ef4444, 0.3);
+}
+
+// Contact Info Card
+.contact-info-card {
+  background: $gradient-dark;
+  border-radius: $radius-2xl;
+  padding: $spacing-xl;
+  color: $white;
+  box-shadow: $shadow-lg;
+  height: fit-content;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: $spacing-2xl;
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.info-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+.info-description {
+  font-size: $font-size-base;
+  color: $gray-light;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-xl;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  background: rgba($white, 0.05);
+  border-radius: $radius-lg;
+  transition: all $transition-base;
+
+  &:hover {
+    background: rgba($white, 0.1);
+    transform: translateX(5px);
+  }
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: $gradient-primary;
+  border-radius: $radius-lg;
+  font-size: $font-size-xl;
+  flex-shrink: 0;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.info-label {
+  font-size: $font-size-sm;
+  color: $gray-light;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-value {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $white;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+// Social Links
+.contact-social {
+  padding-top: $spacing-lg;
+  border-top: 1px solid rgba($white, 0.1);
+}
+
+.social-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-md;
+}
+
+.social-links {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba($white, 0.1);
+  border-radius: $radius-md;
+  color: $white;
+  font-size: $font-size-xl;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $gradient-primary;
+    transform: translateY(-3px);
+  }
+}
+
+.social-icon {
+  font-size: 1.25rem;
+}

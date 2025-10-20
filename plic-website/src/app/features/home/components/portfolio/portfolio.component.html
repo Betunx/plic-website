@@ -1,0 +1,61 @@
+<section class="portfolio section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Proyectos que <span class="text-gradient">inspiran</span></h2>
+      <p class="section-intro">
+        Descubre algunos de nuestros trabajos más destacados y los resultados
+        que hemos logrado para nuestros clientes.
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="portfolio-filters">
+      <button
+        *ngFor="let category of categories"
+        class="filter-btn"
+        [class.active]="activeFilter === category.id"
+        (click)="setFilter(category.id)">
+        {{ category.label }}
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="portfolio-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div
+        class="portfolio-item"
+        *ngFor="let project of filteredProjects"
+        (click)="onProjectClick(project)">
+        <div class="project-image-wrapper">
+          <img
+            [src]="project.image"
+            [alt]="project.title"
+            class="project-image"
+            loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-category">{{ getCategoryLabel(project.category) }}</div>
+            <button class="view-project-btn">Ver Proyecto</button>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-metrics">
+            <div class="metric" *ngFor="let metric of project.metrics">
+              <div class="metric-value">{{ metric.value }}</div>
+              <div class="metric-label">{{ metric.label }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="filteredProjects.length === 0">
+      <p>No se encontraron proyectos en esta categoría.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,236 @@
+@use '../../../../../styles/variables' as *;
+
+.about {
+  background: $white;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto $spacing-3xl;
+}
+
+.section-label {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($secondary, 0.1) 100%);
+  color: $primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: $radius-full;
+  margin-bottom: $spacing-md;
+}
+
+.section-title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-tight;
+  color: $dark;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.section-intro {
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  color: $gray;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-xl;
+  }
+}
+
+// About Cards
+.about-cards {
+  margin-bottom: $spacing-3xl;
+}
+
+.about-card {
+  text-align: center;
+  height: 100%;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: $spacing-md;
+}
+
+.card-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $dark;
+  margin-bottom: $spacing-sm;
+}
+
+.card-description {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $gray;
+}
+
+// Team Section
+.team-section {
+  margin-bottom: $spacing-3xl;
+}
+
+.team-title {
+  text-align: center;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $dark;
+  margin-bottom: $spacing-xl;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+  background: $gradient-dark;
+  border-radius: $radius-2xl;
+  padding: $spacing-xl;
+  color: $white;
+  box-shadow: $shadow-xl;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-3xl;
+    padding: $spacing-2xl;
+  }
+}
+
+.team-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.team-image {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: $radius-2xl;
+  overflow: hidden;
+  box-shadow: $shadow-xl;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.team-decoration {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: $gradient-primary;
+  border-radius: $radius-2xl;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+  opacity: 0.5;
+
+  @media (min-width: $breakpoint-lg) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.team-member-name {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-extrabold;
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-member-role {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $gray-light;
+}
+
+.team-member-description {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  color: $gray-light;
+}
+
+.team-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: $gradient-primary;
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  flex-shrink: 0;
+}
+
+.highlight-text {
+  font-size: $font-size-base;
+  color: $white;
+}
+
+// CTA Section
+.about-cta {
+  text-align: center;
+  padding: $spacing-3xl;
+  background: linear-gradient(135deg, rgba($primary, 0.05) 0%, rgba($secondary, 0.05) 100%);
+  border-radius: $radius-2xl;
+}
+
+.cta-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $dark;
+  margin-bottom: $spacing-sm;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.cta-description {
+  font-size: $font-size-lg;
+  color: $gray;
+  margin-bottom: $spacing-lg;
+}

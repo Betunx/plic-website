@@ -1,0 +1,66 @@
+<section class="about section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <div class="section-label">Sobre Nosotros</div>
+      <h2 class="section-title">Creamos experiencias digitales que <span class="text-gradient">transforman marcas</span></h2>
+      <p class="section-intro">
+        Somos un equipo de diseñadores, estrategas y creadores digitales apasionados
+        por ayudar a las marcas a alcanzar su máximo potencial en el mundo digital.
+      </p>
+    </div>
+
+    <!-- About Cards -->
+    <div class="about-cards grid grid-cols-1 md:grid-cols-3">
+      <div class="card about-card" *ngFor="let card of aboutCards">
+        <div class="card-icon">{{ card.icon }}</div>
+        <h3 class="card-title">{{ card.title }}</h3>
+        <p class="card-description">{{ card.description }}</p>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+      <h3 class="team-title">Conoce al Fundador</h3>
+
+      <div class="team-card">
+        <div class="team-image-wrapper">
+          <div class="team-image">
+            <img [src]="teamMember.image" [alt]="teamMember.name" />
+          </div>
+          <div class="team-decoration"></div>
+        </div>
+
+        <div class="team-content">
+          <h4 class="team-member-name">{{ teamMember.name }}</h4>
+          <p class="team-member-role">{{ teamMember.role }}</p>
+          <p class="team-member-description">{{ teamMember.description }}</p>
+
+          <div class="team-highlights">
+            <div class="highlight-item">
+              <span class="highlight-icon">✓</span>
+              <span class="highlight-text">Ingeniero en Diseño Digital</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">✓</span>
+              <span class="highlight-text">5+ años de experiencia</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">✓</span>
+              <span class="highlight-text">50+ proyectos exitosos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta">
+      <h3 class="cta-title">¿Listo para transformar tu presencia digital?</h3>
+      <p class="cta-description">Trabajemos juntos para crear algo increíble</p>
+      <button class="btn btn-primary btn-lg" (click)="scrollToContact()">
+        Hablemos de tu proyecto
+      </button>
+    </div>
+  </div>
+</section>
