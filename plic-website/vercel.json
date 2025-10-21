@@ -1,6 +1,8 @@
 {
   "version": 2,
   "public": true,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/plic-website/browser",
   "rewrites": [
     {
       "source": "/(.*)",
