@@ -1,8 +1,7 @@
 {
   "version": 2,
-  "public": true,
-  "buildCommand": "ng build",
-  "outputDirectory": "dist/plic-website/browser",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist/plic-website",
   "rewrites": [
     {
       "source": "/(.*)",
