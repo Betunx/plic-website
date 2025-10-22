@@ -1,7 +1,6 @@
 {
-  "buildCommand": "npm install && npm run build",
-  "installCommand": "npm install",
-  "framework": null,
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist/plic-website/browser",
   "rewrites": [
     {
